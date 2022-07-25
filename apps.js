@@ -28,7 +28,7 @@ if ( entrada1 == "s" ){
   alert (" Buena suerte ⚽ No olvides completar con una -V- para verdadero y una -F- para falso")
   let preguntas;    
   //Genere variables sin indicar valor ya que lo indico dentro del bucle a continuacion //
-  let totalPreguntasRespondidas, totalPreguntasCorrectas, totalPreguntasEquivocadas;
+  let totalPreguntasCorrectas, totalPreguntasEquivocadas;
 
   do  {
       //Variables para despues mostrar la cantidad de preguntas Verdaderas y Falsas//
