@@ -1,7 +1,114 @@
-/* PROYECTO DE TOMAS CAPPELLI COMISION N° 33990 */
-// Este código consiste en que el usuario tendrá que resolver una serie de Preguntas indicando si son Verdaderas o Falsas. Al final del código se mostraran cuantas preguntas fueron verdaderas y cuantas falas. La Temática será sobre la historia de los Mundiales. Esperemos que salga !! //
+/* PROYECTO DE TOMAS CAPPELLI COMISION N° 33990 DESAFIO SIMULADOR INTERACTIVO  */
+
+// CREACION DE PRESUPUESTO POR SERVICIOS FOTOGRAFICOS //
+
+const horaDeTrabajo = 1500;
+const horaEdicionFotos = 150;
+const a = "Casamiento";
+const b = "Sesion de Fotos";
+const c = "Bautizmo";
+const d = "Evento Deportivo";
+
+alert ("Elija que tipo de evento desea presupuestar");
+let tipoEventos = prompt (" A: Casamiento \n B: Sesion de Fotos Artistica \n C: Bautizmo \n D: Cumpleaños de 15 \n D: Evento deportivo").toLowerCase();
+
+while ((tipoEventos != "a") && (tipoEventos != "b") && (tipoEventos != "c") && (tipoEventos !="d")){
+  alert ("ingrese una opcion validad");
+  tipoEventos = prompt (" A: Casamiento \n B: Sesion de Fotos Artistica \n C: Bautizmo \n D: Cumpleaños de 15 \n D: Evento deportivo").toLowerCase();
+}
+let horaselegidas
+while(true) {
+  horaselegidas = parseInt(prompt ("Ingrese la cantidad de horas desea el servicio"));
+if(!isNaN(horaselegidas) && horaselegidas != null && horaselegidas != "") {
+break;}
+else{
+  alert ("Ingrese un numero por favor!")
+} 
+}
+function presupuesto (horaDeTrabajo,horaselegidas){
+      resultado1 = horaDeTrabajo*horaselegidas;
+      return resultado1;
+}
+function packEdicion (horaEdicionFotos,cantidadDeFotos){
+    resultado2 = horaEdicionFotos * cantidadDeFotos;
+    return resultado2;
+}
+
+if (tipoEventos == "a"){
+  alert ("El costo total por el servicio de" + " " + a + " " + "$"+ presupuesto(horaDeTrabajo,horaselegidas)+" " +"total")
+}
+else if (tipoEventos == "b"){
+  alert ("El costo total por el servicio de " +" "+ b +" "+ " " +"$"+ presupuesto (horaDeTrabajo,horaselegidas)+" " + "total")
+}
+else if (tipoEventos == "c"){
+  alert ("El costo total por el servicio de " +" "+ c + " "+ " " + +"$"+presupuesto (horaDeTrabajo,horaselegidas)+" " + "total")
+}
+else if (tipoEventos == "d"){
+  alert ("El costo total por el servicio de " +" "+ d +" "+ " " +"$"+ presupuesto (horaDeTrabajo,horaselegidas)+" " + "total")
+} 
+else{
+  alert ("ingrese una respusta valida");
+}
 
 
+let pack = prompt ("Desea presupuestar el Pack Edicion de las mejores fotos? S/N").toLowerCase ()
+  while(pack != "s" && pack != "n"){
+    alert ("Error: Ingrese S/N para continuar")
+      pack = prompt ("Desea presupuestar el Pack Edicion de las mejores fotos? S/N").toLowerCase()
+  }
+let cantidadDeFotos
+
+
+
+while (pack == "s") {
+cantidadDeFotos = parseInt (prompt ("ingrese la canditad de fotos que desea"));
+if(!isNaN(cantidadDeFotos) && cantidadDeFotos != null && cantidadDeFotos != "") {
+  break;}
+  else{
+    alert ("Ingrese un numero por favor!")
+  } 
+}
+
+
+if (pack == "s"){
+  alert ("Por"+ " "+ cantidadDeFotos +" " + "fotos editadas: Es un total" +" " +"$"+(packEdicion(horaEdicionFotos,cantidadDeFotos)));
+}
+else if (pack == "n"){
+  alert ("Se perdera la edicion de las mejores fotos")
+}
+else {
+  alert ("Ingrese un numero por favor!")
+}
+
+function totalPresupuestadoCompleto (resultado1,resultado2) {
+   resultado3 = resultado1+resultado2;
+   return resultado3;
+}
+
+function totalPresupuestado (resultado1){
+  resultado4 = resultado1;
+  return resultado4
+}
+
+if (pack == "s"){
+alert ("El presupuesto total es de:" + "\n$"+totalPresupuestadoCompleto (resultado1,resultado2)+ "\nINCLUYE FOTOGRAFIA EN EL EVENTO +" +" " + cantidadDeFotos +" "+ "FOTOS EDITADAS");
+alert ("Gracias por presupuestar con ODC - Fotografia")
+}
+else if( pack == "n"){
+  alert ("El presupuesto total es de:" + "\n$"+ presupuesto(horaDeTrabajo,horaselegidas) + "\nINCLUYE UNICAMENTE FOTOGRAFIA EN EL EVENTO");
+  alert ("Gracias por presupuestar con ODC - Fotografia")
+}
+else {
+  alert ("Gracias por su presupuesto con ODC - Fotografia")
+}
+
+
+
+
+
+
+
+/*
 //le solicito al usuario si quiere participar //
 let entrada1 = prompt ("Estas preparado para jugar con la Historia de los Mundiales? S/N").toLowerCase()
 // Aqui genero un bucle por si el usuario no responde con una "S" o "N".  
@@ -111,4 +218,170 @@ if ( entrada1 == "s" ){
 else if (entrada1 == "n"){
   alert ("Una pena, me hubiese encantado jugar")
 }
+*/
 
+// FUNCIONES //
+/*
+function saludar (){
+  alert ("hola toto");
+
+}
+saludar ()
+
+function solicitarIngresado (){
+  let nombreIngresado = prompt ("ingresar nombre")
+  alert ("El nombre ingresado es" + nombreIngresado)
+}
+
+solicitarIngresado()
+
+function saludo (mensaje,){
+  alert (mensaje);
+}
+
+saludo ("hola toto");
+*/
+/*
+  function decodificador (palabra1, palabra2,palabra3){
+    return palabra3+ " " + palabra2 +" " + palabra1;
+
+  }
+
+  let l1= "hola" 
+  let l2 = "toto"
+  let l3 = "como estas"
+
+  console.log (decodificador(l3,l2,l2)) 
+
+  // scope //
+*//*
+  const suma = (a,b) =>  a + b ;
+  console.log (suma ("toto", "toto"))
+  */
+
+
+
+//Saludar usando funciones //
+/*
+let entradaNombre = prompt ("Hola como te llamas?"); 
+
+function saludar (){
+  let saludo = ("hola " + " " + entradaNombre);
+  return saludo;
+   
+}
+function respuesta (){
+  let respuesta = ("como estas" + " " + entradaNombre + "?");
+  return respuesta; 
+}
+function respuesta2 (){
+  let respuesta2 = (entradaNombre + "queres jugar?");
+  return respuesta2;
+}
+
+  alert (saludar ()); 
+  alert (respuesta());
+  alert (respuesta2());
+*/
+// funcion suma //
+/*
+function suma (n1,n2,n3,n4,n5){
+   let resultado = n1 + n2 + n3 + n4 + n5 ;
+   document.write (resultado)
+}
+
+ suma (7,1,1,1,1);
+*/
+/*
+alert ("vamos a sumar")
+let pregunta1 = parseInt (prompt ("ingrese un numero"));
+let pregunta2 = parseInt (prompt ("ingrese un numero"));
+
+function sumar (a,b){
+  resultado = a +b;
+  return resultado
+}
+
+
+document.write (sumar (pregunta1,pregunta2));
+*/
+
+/* // Funciones con entradas y salidas // 
+function entrada (){
+  return prompt ("Ingrese dato");
+}
+
+function procesamiento (valor){
+  return "la entrada es" + valor; 
+}
+
+function salida (valor){
+  alert (valor);
+}
+
+salida (procesamiento(entrada()));
+*/
+
+
+
+
+
+
+// CLASE OBJETOS //
+//guarda varios objetos en una sola variable
+//const persona1 = { nombre: "Homero", edad: 39, calle: "Av. Siempreviva 742" }
+
+//const persona1 = { 
+ // nombre: "Homero", 
+  //edad: 39, 
+ // calle: "Av. Siempreviva 742" 
+//}
+//const persona1 = { nombre: "Homero",
+  //                 edad: 39,
+    //               calle: "Av. Siempreviva 742"}
+// como llamarlos                   
+//console.log(persona1.nombre)
+//console.log(persona1.edad)
+//console.log(persona1.calle)
+
+//function Persona(nombre, edad, calle) {
+  //this.nombre = nombre;
+  //this.edad 	 = edad;
+  //this.calle  = calle;
+//}
+//const persona1 = new Persona("Homero", 39, "Av. Siempreviva 742");
+//const persona2 = new Persona("Marge", 36, "Av. Siempreviva 742");
+
+//metodos//
+/*
+function Persona(nombre, edad, calle) {
+  this.nombre = nombre;
+  this.edad   = edad;
+  this.calle  = calle;
+  this.hablar = function(){ console.log("HOLA SOY "+ this.nombre)}
+}
+const persona1 = new Persona("Homero", 39, "Av. Siempreviva 742");
+const persona2 = new Persona("Marge", 36, "Av. Siempreviva 742");
+persona1.hablar();
+persona2.hablar();
+*/
+/*
+class Producto {
+  constructor(nombre, precio) {
+      this.nombre  = nombre.toUpperCase();
+      this.precio  = parseFloat(precio);
+      this.vendido = false;
+  }
+  sumaIva() {
+      this.precio = this.precio * 1.21;
+  }
+  vender() {
+      this.vendido = true;
+  }
+}
+const producto1 = new Producto("arroz", "125");
+const producto2 = new Producto("fideo", "50");
+producto1.sumaIva();
+producto2.sumaIva();
+producto1.vender();
+*/
