@@ -2,6 +2,342 @@
 
 // CREACION DE PRESUPUESTO POR SERVICIOS FOTOGRAFICOS //
 
+const precios =  [1500, 150]
+const tipoDeServicio = ["Casamiento","Sesion de Fotos","Bautismo","Cumpleaños de 15","Evento Deportivo"]
+tipoDeServicio.unshift("Arquitectura")
+
+
+
+
+alert ("Elija que tipo de evento desea presupuestar");
+let tipoEventos = prompt (" A: Arquitectura \n B: Casamiento \n C: Sesion de Fotos Artistica \n D: Bautismo \n F: Cumpleaños de 15 \n G: Evento deportivo").toLowerCase();
+
+while ((tipoEventos != "a") && (tipoEventos != "b") && (tipoEventos != "c") && (tipoEventos !="d")&& (tipoEventos !="f")&& (tipoEventos !="g")){
+  alert ("ingrese una opcion validad");
+  tipoEventos = prompt (" A: Arquitectura \n B: Casamiento \n C: Sesion de Fotos Artistica \n D: Bautismo \n F: Cumpleaños de 15 \n G: Evento deportivo").toLowerCase();
+}
+let horaselegidas
+while(true) {
+  horaselegidas = parseInt(prompt ("Ingrese la cantidad de horas desea el servicio"));
+if(!isNaN(horaselegidas) && horaselegidas != null && horaselegidas != "") {
+break;}
+else{
+  alert ("Ingrese un numero por favor!")
+} 
+}
+function presupuesto (){
+      resultado1 = precios[0] *horaselegidas;
+      return resultado1;
+}
+function packEdicion (){
+    resultado2 = precios[1] * cantidadDeFotos;
+    return resultado2;
+}
+
+if (tipoEventos == "a"){
+  alert ("El costo total por el servicio de" + " " + tipoDeServicio[0] + " " + "$"+ presupuesto ()+" " +"total")
+}
+else if (tipoEventos == "b"){
+  alert ("El costo total por el servicio de " +" "+ tipoDeServicio[1] +" "+ " " +"$"+ presupuesto ()+" " + "total")
+}
+else if (tipoEventos == "c"){
+  alert ("El costo total por el servicio de " +" "+ tipoDeServicio[2] + " "+ " " + "$"+presupuesto ()+" " + "total")
+}
+else if (tipoEventos == "d"){
+  alert ("El costo total por el servicio de " +" "+ tipoDeServicio[3] +" "+ " " +"$"+ presupuesto ()+" " + "total")
+}
+else if (tipoEventos == "f"){
+  alert ("El costo total por el servicio de " +" "+ tipoDeServicio[4] +" "+ " " +"$"+ presupuesto ()+" " + "total")
+} 
+else if (tipoEventos == "g"){
+  alert ("El costo total por el servicio de " +" "+ tipoDeServicio[5] +" "+ " " +"$"+ presupuesto ()+" " + "total")
+}  
+else{
+  alert ("ingrese una respusta valida");
+}
+
+
+let pack = prompt ("Desea presupuestar el Pack Edicion de las mejores fotos? S/N").toLowerCase ()
+  while(pack != "s" && pack != "n"){
+    alert ("Error: Ingrese S/N para continuar")
+      pack = prompt ("Desea presupuestar el Pack Edicion de las mejores fotos? S/N").toLowerCase()
+  }
+let cantidadDeFotos
+
+
+
+while (pack == "s") {
+cantidadDeFotos = parseInt (prompt ("ingrese la canditad de fotos que desea"));
+if(!isNaN(cantidadDeFotos) && cantidadDeFotos != null && cantidadDeFotos != "") {
+  break;}
+  else{
+    alert ("Ingrese un numero por favor!")
+  } 
+}
+
+
+if (pack == "s"){
+  alert ("Por"+ " "+ cantidadDeFotos +" " + "fotos editadas: Es un total" +" " +"$"+ packEdicion());
+}
+else if (pack == "n"){
+  alert ("Se perdera la edicion de las mejores fotos")
+}
+else {
+  alert ("Ingrese un numero por favor!")
+}
+
+function totalPresupuestadoCompleto (resultado1,resultado2) {
+   resultado3 = resultado1+resultado2;
+   return resultado3;
+}
+
+function totalPresupuestado (resultado1){
+  resultado4 = resultado1;
+  return resultado4
+}
+
+if (pack == "s"){
+alert ("El presupuesto total  es de:" + "\n$"+totalPresupuestadoCompleto (resultado1,resultado2)+ "\nINCLUYE FOTOGRAFIA EN EL EVENTO +" +" " + cantidadDeFotos +" "+ "FOTOS EDITADAS");
+alert ("Gracias por presupuestar con ODC - Fotografia")
+}
+else if( pack == "n"){
+  alert ("El presupuesto total es de:" + "\n$"+ presupuesto() + "\nINCLUYE UNICAMENTE FOTOGRAFIA EN EL EVENTO");
+  alert ("Gracias por presupuestar con ODC - Fotografia")
+}
+else {
+  alert ("Gracias por su presupuesto con ODC - Fotografia")
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+class Tienda{
+  constructor(nombre, direccion, propietario, rubro){
+      this.nombre = nombre;
+      this.direccion = direccion;
+      this.propietario = propietario;
+      this.rubro = rubro;
+  }
+    esPropietario(nombre){
+      return this.propietario == nombre;
+  }
+}
+const tienda1 = new Tienda("Kwik-E-Mart", "Park 123", "Apu", "Almacen");
+const tienda2 = new Tienda("Edna's Edibles", "PEREZ 323", "Edna Krabappel", "Panaderia");
+const tienda3 = new Tienda("Springfield Mall", "Hall 231", "Mr. Burns", "Shopping");
+for (let index = 0; index < 5; index++) {
+  let entrada = prompt("INGRESAR NOMBRE DE PROPITARIO");
+  if (tienda1.esPropietario(entrada)){
+      alert(entrada + " ES PROPIETARIO DE LA TIENDA " + tienda1.nombre);
+  }
+  if (tienda2.esPropietario(entrada)){
+      alert(entrada + " ES PROPIETARIO DE LA TIENDA " + tienda2.nombre);
+  }
+  if (tienda3.esPropietario(entrada)){
+      alert(entrada + " ES PROPIETARIO DE LA TIENDA " + tienda3.nombre);
+  }
+}
+
+*/
+
+
+
+ 
+
+
+
+
+
+
+/*
+class Tienda{
+  constructor(nombre, direccion, propietario, rubro){
+      this.nombre = nombre;
+      this.direccion = direccion;
+      this.propietario = propietario;
+      this.rubro = rubro;
+  }
+  estaAbierto(hora){
+      if (((hora  >= 8) && (hora  <= 12))||((hora  >= 15) && (hora  <= 19))) {
+          return true;
+      }
+      return false;
+  }
+}
+const tienda4 = new Tienda("33 cents Store", "Cheap 231", "Barato SRL","Ropa");
+
+
+for (let index = 0; index < 3 ; index++) {
+
+  let entrada = parseInt(prompt("INGRESAR HORA EN PUNTO"));
+  if(tienda4.estaAbierto(entrada)){
+      alert("LA TIENDA ESTA ABIERTA A LAS "+entrada)
+  }else{
+      alert("LA TIENDA ESTA CERRADA A LAS "+entrada)
+  }
+}
+
+
+*/
+
+
+
+/*
+
+class tienda {
+  constructor (nombre,direccion,propietario,rubo){
+    this.nombre = nombre;
+    this.direccion = direccion;
+    this.propietario = propietario;
+    this.rubro = rubo;
+  }
+}
+
+let ingresados = ``
+
+ for (let index = 0; index <= 3; index++) {
+    let tienda1 =  new tienda (prompt("NOMBRE"), prompt("DIRECCION"), prompt("PROPIETARIO"),prompt("RUBRO"));
+ingresados  = "Tienda: "+ tienda.nombre+ " " ,"Direccion: "+tienda.direccion+" " , "Propitario: "+tienda.propietario+" " , "rubro: "+tienda.rubro+"\n"; 
+}
+alert(ingresados);
+
+
+*/
+
+
+
+
+//obejtos
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+/* PROYECTO DE TOMAS CAPPELLI COMISION N° 33990 DESAFIO INCORPORANDO ARRAYS Y OBJETOS  */
+
+
+/*
+const ComadrejaMusicos = ["Dreja Rockera", "Dreja Punk", "Dreja Reggae", "Dreja Trapera", "Dreja dj"]; 
+const ComadrejaSurferas = ["Dreja Hippie Surf", "Dreja Nerd Surf", "Dreja Facha Surf", "Dreja Mistyc Surf", "Dreja Local Surf"];
+const ComadrejaPaises = ["Dreja Argentina" , "Dreja Brazilera", "Dreja Uruguaya", "Dreja Peruana", "Dreja Boliviana" ];
+
+const horaDeTrabajo = 1500;
+const horaEdicionFotos = 150;
+const a = "Casamiento";
+const b = "Sesion de Fotos";
+const c = "Bautizmo";
+const d = "Evento Deportivo";
+
+
+
+alert ("Bienvenidos a la coleccion de NFT de las Comadrejas o tambien le podes decir Drejas")
+alert ("Tenemos varios estilos, elegi cual te gustaria tener")
+let tipoComadreja = prompt ("A: Comadrejas de Musicos\n B: Comadrejas Surferas\n C: Comadrejas de Paises")
+*/
+
+
+
+/*
+// Obejtos//
+class ComadrejaMusicos {
+    constructor (nombre,edad,estilo,color,precio){
+      this.nombre = nombre;
+      this.edad = edad;
+      this.estilo = estilo;
+      this.color = color;
+      this.precio = precio;
+      this.info = `Me llamo ${this.nombre} tengo ${this.edad} años, me gusta el ${this.estilo} , soy de color ${this.color} y mi precio es de  ${this.precio} DRJ`;
+    }
+    verInfo(){
+     console.log(this.info)
+    }
+}
+
+//Creacion de Personajes DrejaMusicos //
+let drejaRockera = new ComadrejaMusicos ("Jimmy",30, "Rock", "Negro",1);
+let drejaPunk = new ComadrejaMusicos ("Ricky",22, "Punk", "Rojo",2);
+let drejaReggae = new ComadrejaMusicos ("Bob",27, "Reggae", "Amarillo",3);
+let drejaTrapera = new ComadrejaMusicos ("Lemmy",20, "Trap", "Azul",4);
+let drejadj = new ComadrejaMusicos ("Peluca",50, "House", "Verde",5);
+
+
+
+// Obejetos//
+class ComadrejaSurferas {
+  constructor (nombre,edad,estilo,color,precio){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.estilo = estilo;
+    this.color = color;
+    this.precio = precio;
+    this.info = `Me llamo ${this.nombre} tengo ${this.edad} años, me gusta el ${this.estilo} , soy de color ${this.color} y mi precio es de  ${this.precio} DRJ`;
+  }
+  verInfo(){
+    console.log(this.info)
+   }
+}
+//Creacion de Personajes Drejas Surferas//
+let drejaHippieSurf  = new ComadrejaMusicos ("Otto",30, "Rock", "Amarillo",1);
+let drejaNerdSurf = new ComadrejaMusicos ("Siri",30, "Punk", "Rojo",2);
+let drejaFachaSurf = new ComadrejaMusicos ("Ken",25, "Pop", "Azul",3);
+let drejaMistycSurf = new ComadrejaMusicos ("Nicky",60, "Blues", "Negro",4);
+let drejaLocalSurf = new ComadrejaMusicos ("Kelly",40, "Indie", "Celeste",5);
+
+
+
+
+//Objetos//
+class ComadrejaPaises {
+  constructor (nombre,edad,estilo,color,precio){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.estilo = estilo;
+    this.color = color;
+    this.precio = precio;
+    this.info = `Me llamo ${this.nombre} tengo ${this.edad} años, me gusta la ${this.estilo} , soy de color ${this.color} y mi precio es de  ${this.precio} DRJ`;
+  }
+  verInfo(){
+    console.log(this.info)
+   }
+}
+
+//Creacion de Personajes Drejas Paises//
+let drejaArgentina   = new ComadrejaMusicos ("Diego",40, "Cumbia", "Amarillo",1);
+let drejaBrazilera = new ComadrejaMusicos ("Ney",20, "Zamba", "Verde",2);
+let drejaUruguaya  = new ComadrejaMusicos ("Wilson",50, "Candombe", "Azul",3);
+let drejaPeruana  = new ComadrejaMusicos ("Ceviche", 30, "Cumbia", "Rojo",4);
+let drejaBoliviana  = new ComadrejaMusicos ("Kelly",40, "Cumbia", "Verde",5);
+*/
+
+
+
+
+
+
+
+
+
+
+/* PROYECTO DE TOMAS CAPPELLI COMISION N° 33990 DESAFIO SIMULADOR INTERACTIVO  */
+
+// CREACION DE PRESUPUESTO POR SERVICIOS FOTOGRAFICOS //
+/*
 const horaDeTrabajo = 1500;
 const horaEdicionFotos = 150;
 const a = "Casamiento";
@@ -102,7 +438,7 @@ else {
   alert ("Gracias por su presupuesto con ODC - Fotografia")
 }
 
-
+*/
 
 
 
@@ -385,3 +721,66 @@ producto1.sumaIva();
 producto2.sumaIva();
 producto1.vender();
 */
+
+// Arrays //
+
+
+
+
+
+
+
+
+/*
+// Objetos//
+class Producto {
+  constructor(nombre, precio) {
+      this.nombre  = nombre.toUpperCase();
+      this.precio  = parseFloat(precio);
+      this.vendido = false;
+  }
+  sumaIva() {
+      this.precio = this.precio * 1.21;
+  }
+}
+//Declaramos un array de productos para almacenar objetos
+const productos = [];
+productos.push(new Producto("arroz", "125"));
+productos.push(new Producto("fideo", "70"));
+productos.push(new Producto("pan", "50"));
+//Iteramos el array con for...of para modificarlos a todos
+for (const producto of productos)
+  producto.sumaIva();
+
+  console.log (productos[0]);
+  console.log (productos[1]);
+  console.log (productos[0]);
+
+/*
+const productos = [{ id: 1, producto: "Arroz" },
+                  { id: 2,  producto: "Fideo" },
+                  { id: 3,  producto: "Pan" }];
+
+for (const producto of productos) {
+    console.log(producto.id);
+    console.log(producto.producto);
+}
+*/
+
+/*
+ class animal {
+     constructor(nombre,edad,color){
+     this.nombre = nombre;
+     this.edad = edad;
+     this.color = color;
+ }
+ }
+
+
+let perro = new animal("labrador",4,"rojo")
+
+console.log (perro)
+*/
+
+
+
