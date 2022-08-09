@@ -1,8 +1,88 @@
+
+/*
+
+const productos = [{ id: 1, producto: "Arroz" },
+                  { id: 2,  producto: "Fideo" },
+                  { id: 3,  producto: "Pan" }];
+
+
+
+let tipoDeProductos = prompt ("Eliga que producto desea compara: A: Arroz \n B: Fideo \n C: Pan")
+
+for (const producto of productos) {
+  if (producto.id == tipoDeProductos) 
+  alert (producto.producto)
+}
+*/
+
+
+
+
+
+
+const Presupuestos = [
+  {id: 1, servicio: "Fotos de Productos para Redes Sociales", precio: 1500, incluye: "Un pack de 20 fotos"},
+  {id: 2, servicio:"Evento Musical", precio: 2500, incluye: "Viaticos y edicion de 20 fotos"},
+  {id: 3, servicio: "Evento Deportivo", precio: 3000, incluye: "Viaticos y edicion de 20 fotos"},
+  {id: 4, servicio: "Fotografia de Paisaje", precio: 1000, incluye: "Un Pack de 10 fotos editadas"}]
+
+  Presupuestos.push ({id:5, servicio: "Fotografia de Retrato" , precio: 1500, incluye: "Viaticos y 10 fotos editadas" });
+
+ console.log (Presupuestos)
+  
+
+
+const opcionElegida = parseInt (prompt ("Eliga que tipo de servicio fotografico desea presupuestar \n 1: Fotos de Productos para Redes Sociales \n 2: Evento Musical \n 3 : Evento Deportivo \n 4: Fotografia de Paisaje \n 5: Fotografia de Retraro "));
+const cantidadHorasElegidas = parseInt ( prompt ("Eliga cuantas horas desea el servicio"));
+
+for (const servicio of Presupuestos) {
+  if (servicio.id == opcionElegida){
+     alert ("Detallamos a continuacion el presupuesto : \n Servicio a contratar:" + " " + servicio.servicio + "\n Cantidad de horas:" + " " + cantidadHorasElegidas + "\n" +
+     " Presupuesto total :" + " " +  (servicio.precio * cantidadHorasElegidas)+ "\n Incluye :"+ " " + servicio.incluye )
+ }
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+  /*
+  if (opcionElegida == 1){
+    function (){
+      resultado1 = horaElegidas * servicio.precio
+      alert ("total de"+ resultado1)
+    }
+  
+   }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* PROYECTO DE TOMAS CAPPELLI COMISION N° 33990 DESAFIO SIMULADOR INTERACTIVO + ARRAYS  */
 
 // CREACION DE PRESUPUESTO POR SERVICIOS FOTOGRAFICOS //
 
-const precios =  [1500, 150]
+/*
+const precios = [{precioXHora: 1500, precioXEdicion: 150}]
 const tipoDeServicio = ["Casamiento","Sesion de Fotos","Bautismo","Cumpleaños de 15","Evento Deportivo"]
 tipoDeServicio.unshift("Arquitectura")
 
@@ -781,6 +861,5 @@ let perro = new animal("labrador",4,"rojo")
 
 console.log (perro)
 */
-
 
 
