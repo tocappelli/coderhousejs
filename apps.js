@@ -1,40 +1,27 @@
+/* PROYECTO DE TOMAS CAPPELLI COMISION N° 33990 DESAFIO SIMULADOR INTERACTIVO + ARRAYS  */
 
-/*
-
-const productos = [{ id: 1, producto: "Arroz" },
-                  { id: 2,  producto: "Fideo" },
-                  { id: 3,  producto: "Pan" }];
+// CREACION DE PRESUPUESTO POR SERVICIOS FOTOGRAFICOS //
 
 
-
-let tipoDeProductos = prompt ("Eliga que producto desea compara: A: Arroz \n B: Fideo \n C: Pan")
-
-for (const producto of productos) {
-  if (producto.id == tipoDeProductos) 
-  alert (producto.producto)
-}
-*/
-
-
-
-
-
-
+// Utilice arrays de objetos para crear los servicios a ofrecer
 const Presupuestos = [
   {id: 1, servicio: "Fotos de Productos para Redes Sociales", precio: 1500, incluye: "Un pack de 20 fotos"},
   {id: 2, servicio:"Evento Musical", precio: 2500, incluye: "Viaticos y edicion de 20 fotos"},
   {id: 3, servicio: "Evento Deportivo", precio: 3000, incluye: "Viaticos y edicion de 20 fotos"},
   {id: 4, servicio: "Fotografia de Paisaje", precio: 1000, incluye: "Un Pack de 10 fotos editadas"}]
 
+// Sume un nuevo servicio  utilizando el metodo push // 
   Presupuestos.push ({id:5, servicio: "Fotografia de Retrato" , precio: 1500, incluye: "Viaticos y 10 fotos editadas" });
 
- console.log (Presupuestos)
+ // console.log (Presupuestos)
   
 
-
+// Mediante prompt pregunto al usuario  cuantas horas y que tipo de Servicio desea contratar //
 const opcionElegida = parseInt (prompt ("Eliga que tipo de servicio fotografico desea presupuestar \n 1: Fotos de Productos para Redes Sociales \n 2: Evento Musical \n 3 : Evento Deportivo \n 4: Fotografia de Paisaje \n 5: Fotografia de Retraro "));
+
 const cantidadHorasElegidas = parseInt ( prompt ("Eliga cuantas horas desea el servicio"));
 
+ // Dependiendo de las opciones ingresadas por el usuario anteriormente Utilizo la sentencia "For of" para reccorrer la lista de servicios y dependiendo de la opcion que eliga el usuario se le detallara un presupuesto //
 for (const servicio of Presupuestos) {
   if (servicio.id == opcionElegida){
      alert ("Detallamos a continuacion el presupuesto : \n Servicio a contratar:" + " " + servicio.servicio + "\n Cantidad de horas:" + " " + cantidadHorasElegidas + "\n" +
