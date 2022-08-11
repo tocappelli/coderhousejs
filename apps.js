@@ -11,8 +11,6 @@ const Presupuestos = [
 
 Presupuestos.push ({id:5, servicio: "Fotografia de Retrato" , precio: 1500, incluye: "Viaticos y 10 fotos editadas" });
 
-// Muestro todos los Servicio que se ofrece utilizando metodo MAP //
-
 //Utilizo Map para mostrar lista de Servicios //
 
 const todosLosServicios = Presupuestos.map ((servi) => servi.servicio + " " + servi.precio + " " + "x hora" )
