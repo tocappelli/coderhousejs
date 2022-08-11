@@ -1,8 +1,5 @@
 /* PROYECTO DE TOMAS CAPPELLI COMISION N° 33990 DESAFIO SIMULADOR INTERACTIVO + ARRAYS  */
-
 // CREACION DE PRESUPUESTO POR SERVICIOS FOTOGRAFICOS //
-
-
 // Utilice arrays de objetos para crear los servicios a ofrecer
 const Presupuestos = [
   {id: 1, servicio: "Fotos de Productos para Redes Sociales", precio: 1500, incluye: "Un pack de 20 fotos"},
@@ -11,27 +8,75 @@ const Presupuestos = [
   {id: 4, servicio: "Fotografia de Paisaje", precio: 1000, incluye: "Un Pack de 10 fotos editadas"}]
 
 // Sume un nuevo servicio  utilizando el metodo push // 
-  Presupuestos.push ({id:5, servicio: "Fotografia de Retrato" , precio: 1500, incluye: "Viaticos y 10 fotos editadas" });
 
- // console.log (Presupuestos)
+Presupuestos.push ({id:5, servicio: "Fotografia de Retrato" , precio: 1500, incluye: "Viaticos y 10 fotos editadas" });
+
+// Muestro todos los Servicio que se ofrece utilizando metodo MAP //
+
+//Utilizo Map para mostrar lista de Servicios //
+
+const todosLosServicios = Presupuestos.map ((servi) => servi.servicio + " " + servi.precio + " " + "x hora" )
   
+//Funcion Saludo Bienvenida //
+
+function saludar (){
+    alert ("Hola! Bienvenido a Odc-Fotografia");  
+    datosUsurario = prompt ("Escribe tu nombre").toLocaleUpperCase();
+    saludoBienvenida = "Hola" + " " + datosUsurario + ", a continuacion les detallaremos la lista de servicios" ;
+    return saludoBienvenida 
+}
+
+//Ejecuto la funcion de Bienvenida + Listado de Servicios //
+
+alert (saludar())
+alert (todosLosServicios.join (" - \n"))
 
 // Mediante prompt pregunto al usuario  cuantas horas y que tipo de Servicio desea contratar //
 const opcionElegida = parseInt (prompt ("Eliga que tipo de servicio fotografico desea presupuestar \n 1: Fotos de Productos para Redes Sociales \n 2: Evento Musical \n 3 : Evento Deportivo \n 4: Fotografia de Paisaje \n 5: Fotografia de Retraro "));
 
 const cantidadHorasElegidas = parseInt ( prompt ("Eliga cuantas horas desea el servicio"));
 
- // Dependiendo de las opciones ingresadas por el usuario anteriormente Utilizo la sentencia "For of" para reccorrer la lista de servicios y dependiendo de la opcion que eliga el usuario se le detallara un presupuesto //
-for (const servicio of Presupuestos) {
+ // Utilizo la sentencia "For of" para reccorrer el Arrays de objetos traer los datos //
+
+ for (const servicio of Presupuestos) {
+
+// Funcion para sacar presupuesto dependiendo del serivicio y las horas elegidas  // 
+  const presu = (a,b) => servicio.precio*cantidadHorasElegidas;
+
+//Dependiendo de las opciones elegidas por el usuario imprimo por alert el presupuesto total //
   if (servicio.id == opcionElegida){
-     alert ("Detallamos a continuacion el presupuesto : \n Servicio a contratar:" + " " + servicio.servicio + "\n Cantidad de horas:" + " " + cantidadHorasElegidas + "\n" +
-     " Presupuesto total :" + " " +  (servicio.precio * cantidadHorasElegidas)+ "\n Incluye :"+ " " + servicio.incluye )
- }
+     alert (datosUsurario +"," + " te detallamos a continuacion el presupuesto : \n Servicio a contratar:" + " " + servicio.servicio + "\n Cantidad de horas:" + " " + cantidadHorasElegidas + "\n" +
+     " Precio Final :" + " " +  (presu())+ "\n Incluye :"+ " " + servicio.incluye );
+     alert ("Gracias por contactarnos")
+}
 }
 
 
 
 
+
+
+
+
+
+/*
+let servicioMasCaro = "";
+let precioMasCaro  = 0;
+
+let servicioMasBarato = "";
+let precioMasBarato = 999999999999999999;
+
+for (const producto of Presupuestos) {
+  if (producto.precio > precioMasCaro)
+    precioMasCaro = producto.precio;
+    servicioMasCaro = producto.servicio;
+  
+    if (producto.precio < precioMasBarato)
+    precioMasBarato = producto.precio;
+    servicioMasBarato = producto.servicio;
+}
+console.log ("El servicio mas caro es:", servicioMasCaro, "cuesta", precioMasCaro)
+console.log ("El Servicio mas barato es",servicioMasBarato, "cuesta", precioMasBarato)
 
 
 
