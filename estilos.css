@@ -1,1 +1,38 @@
+body{
+  margin: 0;
+  padding: 0;
+  
+}
+
+.index{
+  background: rgb(22, 22, 22);
+  margin-top: 20px;
+  
+}
+#fotos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.card-body{
+  background-color: gray;
+}
+.card-body h1{
+  font-size: 35px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card-body p {
+  font-size: 1.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.card button{
+  background-color:  rgb(22, 22, 22) ;
+}
+.titulo{
+  text-align: center;
+  font-size: 3rem;
+  color: beige;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 
