@@ -7,7 +7,6 @@ body{
 .index{
   background: rgb(22, 22, 22);
   margin-top: 20px;
-  
 }
 #fotos{
   display: flex;
@@ -15,7 +14,7 @@ body{
   flex-wrap: nowrap;
 }
 .card-body{
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
 }
 .card-body h1{
   font-size: 35px;
