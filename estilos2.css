@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100&family=Bebas+Neue&family=Caudex:wght@400;700&family=Cinzel&family=Cormorant:wght@300&family=Julius+Sans+One&family=Poppins:wght@500&display=swap');
+
+body{
+  font-family: 'Caudex', serif;
+  background:  rgb(22, 22, 22);
+  color: white;
+}
+main{
+  border: 2px solid white;
+  margin: 20px auto;
+}
+.s1 {
+  background-color: gray;
+}
